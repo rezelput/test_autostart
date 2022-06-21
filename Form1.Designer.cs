@@ -37,10 +37,11 @@
             this.end_service = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exit_btn = new System.Windows.Forms.ToolStripButton();
             this.notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exit_closemenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_file = new System.Windows.Forms.ToolStripSplitButton();
+            this.exit_btn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -48,9 +49,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1,
+            this.menu_file,
             this.toolStripSeparator1,
-            this.exit_btn});
+            this.toolStripSplitButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -104,16 +105,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // exit_btn
-            // 
-            this.exit_btn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.exit_btn.Image = ((System.Drawing.Image)(resources.GetObject("exit_btn.Image")));
-            this.exit_btn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(46, 22);
-            this.exit_btn.Text = "Выход";
-            this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
-            // 
             // notify
             // 
             this.notify.Icon = ((System.Drawing.Icon)(resources.GetObject("notify.Icon")));
@@ -126,14 +117,32 @@
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exit_closemenu});
             this.MenuStrip.Name = "contextMenuStrip1";
-            this.MenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.MenuStrip.Size = new System.Drawing.Size(110, 26);
             // 
             // exit_closemenu
             // 
             this.exit_closemenu.Name = "exit_closemenu";
-            this.exit_closemenu.Size = new System.Drawing.Size(180, 22);
+            this.exit_closemenu.Size = new System.Drawing.Size(109, 22);
             this.exit_closemenu.Text = "Выход";
             this.exit_closemenu.Click += new System.EventHandler(this.exit_closemenu_Click);
+            // 
+            // menu_file
+            // 
+            this.menu_file.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menu_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exit_btn});
+            this.menu_file.Image = ((System.Drawing.Image)(resources.GetObject("menu_file.Image")));
+            this.menu_file.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.menu_file.Name = "menu_file";
+            this.menu_file.Size = new System.Drawing.Size(52, 22);
+            this.menu_file.Text = "Файл";
+            // 
+            // exit_btn
+            // 
+            this.exit_btn.Name = "exit_btn";
+            this.exit_btn.Size = new System.Drawing.Size(180, 22);
+            this.exit_btn.Text = "Выход";
+            this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
             // Form1
             // 
@@ -143,6 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -161,10 +171,11 @@
         private System.Windows.Forms.ToolStripMenuItem end_service;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton exit_btn;
         private System.Windows.Forms.NotifyIcon notify;
         private System.Windows.Forms.ContextMenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem exit_closemenu;
+        private System.Windows.Forms.ToolStripSplitButton menu_file;
+        private System.Windows.Forms.ToolStripMenuItem exit_btn;
     }
 }
 

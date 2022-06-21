@@ -1,6 +1,6 @@
 ﻿namespace test_autostart
 {
-    partial class Installer1
+    partial class Installer_service
     {
         /// <summary>
         /// Обязательная переменная конструктора.

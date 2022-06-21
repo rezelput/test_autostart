@@ -5,12 +5,12 @@ using System.Configuration.Install;
 namespace test_autostart
 {
     [RunInstaller(true)]
-    public partial class Installer1 : Installer
+    public partial class Installer_service : Installer
     {
         ServiceInstaller serviceInstaller;
         ServiceProcessInstaller processInstaller;
 
-        public Installer1()
+        public Installer_service()
         {
             InitializeComponent();
             serviceInstaller = new ServiceInstaller();

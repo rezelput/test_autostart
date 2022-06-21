@@ -17,9 +17,12 @@ namespace test_autostart
 
         RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
         private StreamWriter file;
+
+        
         public Service1()
         {
             InitializeComponent();
+            this.AutoLog = true; // служба может вести запись в лог
         }
 
         protected override void OnStart(string[] args)

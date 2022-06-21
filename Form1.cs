@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,20 +39,28 @@ namespace test_autostart
 
         private void start_service_Click(object sender, EventArgs e)
         {
+
             label1.ResetText();
             label1.BackColor = Color.Green;
             label1.Text = "логирование включена";
 
             //
-
-            
+            notify.BalloonTipText = "Служба включена";
+            notify.ShowBalloonTip(12);
         }
+
+
+        
 
         private void end_service_Click(object sender, EventArgs e)
         {
             label1.ResetText();
             label1.BackColor = Color.Red;
             label1.Text = "логирование отключена";
+
+
+            notify.BalloonTipText = "Служба отключена";
+            notify.ShowBalloonTip(12);
         }
 
         private void exit_btn_Click(object sender, EventArgs e)
