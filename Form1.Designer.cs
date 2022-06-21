@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
@@ -37,7 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exit_btn = new System.Windows.Forms.ToolStripButton();
+            this.notify = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exit_closemenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -109,6 +114,27 @@
             this.exit_btn.Text = "Выход";
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
+            // notify
+            // 
+            this.notify.Icon = ((System.Drawing.Icon)(resources.GetObject("notify.Icon")));
+            this.notify.Text = "notify";
+            this.notify.Visible = true;
+            this.notify.Click += new System.EventHandler(this.notify_Click);
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exit_closemenu});
+            this.MenuStrip.Name = "contextMenuStrip1";
+            this.MenuStrip.Size = new System.Drawing.Size(181, 48);
+            // 
+            // exit_closemenu
+            // 
+            this.exit_closemenu.Name = "exit_closemenu";
+            this.exit_closemenu.Size = new System.Drawing.Size(180, 22);
+            this.exit_closemenu.Text = "Выход";
+            this.exit_closemenu.Click += new System.EventHandler(this.exit_closemenu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +146,7 @@
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +162,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton exit_btn;
+        private System.Windows.Forms.NotifyIcon notify;
+        private System.Windows.Forms.ContextMenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem exit_closemenu;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,27 @@ namespace test_autostart
 {
     public partial class Form1 : Form
     {
+
+        
+
         public Form1()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
+            notify.Click += notify_Click;
+            notify.ContextMenuStrip = this.MenuStrip;
+        }
+
+       
+        void notify_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void OnApplicationExit(object sender, EventArgs e)
+        {
+            //Cleanup so that the icon will be removed when the application is closed
+            notify.Visible = false;
         }
 
         private void start_service_Click(object sender, EventArgs e)
@@ -39,6 +58,11 @@ namespace test_autostart
         {
             this.Close();
             
+        }
+
+        private void exit_closemenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

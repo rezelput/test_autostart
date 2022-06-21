@@ -1,0 +1,11 @@
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\bin\Release\test_autostart.exe.config
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\bin\Release\test_autostart.exe
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\bin\Release\test_autostart.pdb
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.csproj.AssemblyReference.cache
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.csproj.SuggestedBindingRedirects.cache
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.Form1.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.Properties.Resources.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.csproj.GenerateResource.cache
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.csproj.CoreCompileInputs.cache
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.exe
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Release\test_autostart.pdb
