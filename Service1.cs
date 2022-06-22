@@ -1,46 +1,111 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Threading;
 
 namespace test_autostart
 {
     partial class Service1 : ServiceBase
     {
 
-        RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-        private StreamWriter file;
+        // RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        Logger logger;
 
-        
         public Service1()
         {
+
             InitializeComponent();
-            this.AutoLog = true; // служба может вести запись в лог
+            this.CanStop = true;
+            this.CanPauseAndContinue = true;
+            this.AutoLog = true;
         }
 
         protected override void OnStart(string[] args)
         {
-            // TODO: Добавьте код для запуска службы.
-            //Файл по умолчанию будет создан в   "C:\Winnt\System32\"
-            file = new System.IO.StreamWriter(new FileStream("log_autoservice.log",
-                                         System.IO.FileMode.Append));
-            this.file.WriteLine("log_autoservice start");
-            this.file.Flush();
+            logger = new Logger();
+            Thread loggerThread = new Thread(new ThreadStart(logger.Start));
+            loggerThread.Start();
         }
 
         protected override void OnStop()
         {
             // TODO: Добавьте код, выполняющий подготовку к остановке службы.
-            this.file.WriteLine("log_autoservice stop");
-            this.file.Flush();
-            this.file.Close();
+
+            logger.Stop();
+            Thread.Sleep(1000);
+        }
+
+
+    }
+
+    class Logger
+    {
+        FileSystemWatcher watcher;
+        object obj = new object();
+        bool enabled = true;
+        public Logger()
+        {
+            watcher = new FileSystemWatcher("D:\\Temp");
+            watcher.Deleted += Watcher_Deleted;
+            watcher.Created += Watcher_Created;
+            watcher.Changed += Watcher_Changed;
+            watcher.Renamed += Watcher_Renamed;
+        }
+
+        public void Start()
+        {
+            watcher.EnableRaisingEvents = true;
+            while (enabled)
+            {
+                Thread.Sleep(1000);
+            }
+        }
+        public void Stop()
+        {
+            watcher.EnableRaisingEvents = false;
+            enabled = false;
+        }
+        // переименование файлов
+        private void Watcher_Renamed(object sender, RenamedEventArgs e)
+        {
+            string fileEvent = "переименован в " + e.FullPath;
+            string filePath = e.OldFullPath;
+            RecordEntry(fileEvent, filePath);
+        }
+        // изменение файлов
+        private void Watcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            string fileEvent = "изменен";
+            string filePath = e.FullPath;
+            RecordEntry(fileEvent, filePath);
+        }
+        // создание файлов
+        private void Watcher_Created(object sender, FileSystemEventArgs e)
+        {
+            string fileEvent = "создан";
+            string filePath = e.FullPath;
+            RecordEntry(fileEvent, filePath);
+        }
+        // удаление файлов
+        private void Watcher_Deleted(object sender, FileSystemEventArgs e)
+        {
+            string fileEvent = "удален";
+            string filePath = e.FullPath;
+            RecordEntry(fileEvent, filePath);
+        }
+
+        private void RecordEntry(string fileEvent, string filePath)
+        {
+            lock (obj)
+            {
+                using (StreamWriter writer = new StreamWriter("D:\\templog.txt", true))
+                {
+                    writer.WriteLine(String.Format("{0} файл {1} был {2}",
+                        DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"), filePath, fileEvent));
+                    writer.Flush();
+                }
+            }
         }
     }
 }
+

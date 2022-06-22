@@ -40,9 +40,9 @@ namespace test_autostart
         private void start_service_Click(object sender, EventArgs e)
         {
 
-            label1.ResetText();
-            label1.BackColor = Color.Green;
-            label1.Text = "логирование включена";
+          //  label1.ResetText();
+//label1.BackColor = Color.Green;
+           // label1.Text = "логирование включена";
 
             //
             notify.BalloonTipText = "Служба включена";
@@ -54,9 +54,9 @@ namespace test_autostart
 
         private void end_service_Click(object sender, EventArgs e)
         {
-            label1.ResetText();
-            label1.BackColor = Color.Red;
-            label1.Text = "логирование отключена";
+          //  label1.ResetText();
+            //label1.BackColor = Color.Red;
+           // label1.Text = "логирование отключена";
 
 
             notify.BalloonTipText = "Служба отключена";
@@ -72,6 +72,12 @@ namespace test_autostart
         private void exit_closemenu_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void create_new_Click(object sender, EventArgs e)
+        {
+            text_form tf = new text_form();
+            tf.Show();
         }
     }
 }
