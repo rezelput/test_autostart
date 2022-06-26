@@ -99,6 +99,9 @@
     <EmbeddedResource Include="Service1.resx">
       <DependentUpon>Service1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="text_form.aa.resx">
+      <DependentUpon>text_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="text_form.resx">
       <DependentUpon>text_form.cs</DependentUpon>
     </EmbeddedResource>

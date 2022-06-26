@@ -9,3 +9,9 @@ C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_auto
 C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.csproj.CoreCompileInputs.cache
 C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.exe
 C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.pdb
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\bin\Debug\aa\test_autostart.resources.dll
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.ProjectInstaller.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.Service1.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.text_form.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\test_autostart.text_form.aa.resources
+C:\Users\sofiy\Documents\GitHH\test_autostart\test_autostart\obj\Debug\aa\test_autostart.resources.dll
